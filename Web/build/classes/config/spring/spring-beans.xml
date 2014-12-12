@@ -6,6 +6,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
+	
+	
 	<bean id="BiYeShengManagerBase" class="com.shxz.manager.BiYeShengManagerImpl"></bean>
 		
 	<bean name="BiYeShengManager" parent="transactionProxy">

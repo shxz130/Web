@@ -3,8 +3,10 @@ package com.shxz.daoimpl;
 import java.util.List;
 
 import javax.annotation.Resource;
+
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+
 import com.shxz.dao.LoginDAO;
 import com.shxz.entity.ZhuCeXinXi;
 /**
@@ -70,5 +72,26 @@ public class LoginDAOimpl implements LoginDAO{
 	
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
+	}
+
+	@Override
+	public int count() {
+		// TODO Auto-generated method stub
+		
+		String hql="select count(*) from ZhuCeXinXi as zhuce ";
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		return ((Number)query.uniqueResult()).intValue();
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override //∑÷“≥≤È—Ø
+	public List<ZhuCeXinXi> getListByFenYe(int start, int number) {
+		// TODO Auto-generated method stub
+		String hql="from ZhuCeXinXi";
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		query.setFirstResult(start);
+		query.setMaxResults(number);
+		return  query.list();
 	}
 }

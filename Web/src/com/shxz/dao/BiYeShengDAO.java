@@ -10,4 +10,8 @@ public interface BiYeShengDAO {
 	public boolean del(String id);
 	public BiYeSheng getBiYeSheng(String id);
 	public List<BiYeSheng> getAllBiYeSheng();
+	public int count();
+	
+	public BiYeSheng getBiYeShengByXH(String xuehao);
+	public List<BiYeSheng> getListByFenYe(int start,int number);
 }

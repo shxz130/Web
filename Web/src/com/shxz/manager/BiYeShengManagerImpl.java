@@ -12,11 +12,7 @@ import com.shxz.entity.BiYeSheng;
 import com.shxz.entity.BiYeXinXi;
 import com.shxz.entity.JiBenXinXi;
 import com.shxz.entity.XueJiXinXi;
-/**
- * 
- * @author shxz130 2014-12-03
- *
- */
+
 public class BiYeShengManagerImpl implements BiYeShengManager{
 
 	private JiBenDAO jiBenDAO;
@@ -97,6 +93,22 @@ public class BiYeShengManagerImpl implements BiYeShengManager{
 		this.biYeShengDAO = biYeShengDAO;
 	}
 
-	
-	
+	@Override
+	public int count() {
+		// TODO Auto-generated method stub
+		return biYeShengDAO.count();
+	}
+
+	@Override
+	public List<BiYeSheng> getListByFenYe(int start, int number) {
+		// TODO Auto-generated method stub
+		return biYeShengDAO.getListByFenYe(start, number);
+	}
+
+	@Override
+	public BiYeSheng getBiYeShengByXH(String xuehao) {
+		// TODO Auto-generated method stub
+		return biYeShengDAO.getBiYeShengByXH(xuehao);
+	}
+
 }

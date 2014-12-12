@@ -7,15 +7,16 @@
 <title>主页面</title>
 </head>
 <body>
-<!-- 
-	<a href="../jiben/addrequest">添加用户基本信息</a>
-	<a href="../jiben/list">查看用户所有信息</a>
-	<a href="../xueji/addrequest">添加学籍基本信息</a>
-	<a href="../xueji/list">查看学籍所有信息</a>
-	<a href="../biye/addrequest">添加学籍基本信息</a>
-	<a href="../biye/list">查看学籍所有信息</a>
- -->	
-	<a href="../biyesheng/addrequest">添加毕业生信息</a>
-	<a href="../biyesheng/list">查看所有所有信息</a>
+
+	<a href="../biyesheng/addrequest">添加毕业生信息</a><br>
+	<a href="../biyesheng/getListByFenYe?pageNow=1&pageSize=10">查看所有所有信息</a><br>
+	<a href="../login/addrequest">注册用户信息</a><br>
+	<a href="../login/getListByFenYe?pageNow=1&pageSize=10">查看所有所有信息</a><br>
+	<a href="../biye/addrequest">添加毕业信息</a><br>
+	<a href="../biye/list">毕业信息遍历</a><br>
+	<a href="../xueji/addrequest">添加学籍信息</a><br>
+	<a href="../xueji/list">学籍遍历</a><br>
+	<a href="../jiben/addrequest">添加基本信息</a><br>
+	<a href="../jiben/list">基本信息遍历</a><br>
 </body>
 </html>

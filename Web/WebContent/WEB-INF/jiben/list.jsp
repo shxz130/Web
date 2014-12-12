@@ -4,9 +4,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script type="text/javascript" src="../js/jquery-1.7.1.js"></script>
+	<% 
+		String basepath = request.getContextPath()+"/";
+	%>
+	<script src="<%=basepath %>/js/jquery.tableui.js"></script>
+	<link href='<%=basepath %>/css/jquery.tableui.css'  rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="<%=basepath %>/js/jquery-1.7.1.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript">
+
+$(function(){
+	$(".table_solid").tableUI();
+});
+
 	function del(id){
 		$.get("/Web/jiben/del?id=" + id,function(data){
 			if("success" == data.result){
@@ -21,7 +31,7 @@
 <title>用户列表</title>
 </head>
 <body>
-<table border="1">
+<table border="1" class="table_solid">
 		<tbody>
 			<tr>
 				<th>姓名</th>

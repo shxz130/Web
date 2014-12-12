@@ -16,9 +16,15 @@
 	<!-- 开启注解 -->
 	<mvc:annotation-driven />
 	
-	<!-- 静态资源(js/image)的访问 -->
-	<mvc:resources location="/js/" mapping="/js/**"/>
-
+	
+	<!-- 静态资源(js/image)的访问	 -->
+	
+ 	<mvc:resources location="/js/" mapping="/js/**"/>
+ 	<mvc:resources location="/css/" mapping="/css/**"/>
+	<mvc:resources location="/images/" mapping="/images/**"/>
+ 	<mvc:resources location="/fonts/" mapping="/fonts/**"/>
+	<mvc:resources location="/img/" mapping="/img/**"/>
+	
 	<!-- 定义视图解析器 -->	
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/"></property>

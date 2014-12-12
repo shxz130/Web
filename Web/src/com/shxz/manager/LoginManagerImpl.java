@@ -44,4 +44,16 @@ public class LoginManagerImpl implements LoginManager{
 		this.loginDAO = loginDAO;
 	}
 
+	@Override
+	public int count() {
+		// TODO Auto-generated method stub
+		return loginDAO.count();
+	}
+
+	@Override
+	public List<ZhuCeXinXi> getListByFenYe(int start, int number) {
+		// TODO Auto-generated method stub
+		return loginDAO.getListByFenYe(start, number);
+	}
+
 }

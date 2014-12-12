@@ -18,4 +18,8 @@ public interface LoginDAO {
 	public boolean delUser(String id);
 	
 	public boolean updateUser(ZhuCeXinXi zhuCeXinXi);
+	
+	public int count();
+	
+	public List<ZhuCeXinXi> getListByFenYe(int start,int number);
 }

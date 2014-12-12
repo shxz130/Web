@@ -3,8 +3,10 @@ package com.shxz.daoimpl;
 import java.util.List;
 
 import javax.annotation.Resource;
+
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+
 import com.shxz.dao.BiYeShengDAO;
 import com.shxz.entity.BiYeSheng;
 /**
@@ -55,4 +57,36 @@ public class BiYeShengDAOimpl implements BiYeShengDAO{
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+
+	
+	@Override
+	public int count() {
+		// TODO Auto-generated method stub
+		
+		String hql="select count(*) from BiYeSheng as biyesheng ";
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		return ((Number)query.uniqueResult()).intValue();
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override //∑÷“≥≤È—Ø
+	public List<BiYeSheng> getListByFenYe(int start, int number) {
+		// TODO Auto-generated method stub
+		String hql="from BiYeSheng";
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		query.setFirstResult(start);
+		query.setMaxResults(number);
+		return  query.list();
+	}
+
+	@Override
+	public BiYeSheng getBiYeShengByXH(String xuehao) {
+		// TODO Auto-generated method stub
+		String hql="from BiYeSheng biyesheng where biyesheng.xueJiXinXi.xuehao= ? ";
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		query.setString(0,xuehao);
+		return (BiYeSheng) query.uniqueResult();
+	}
+
 }
